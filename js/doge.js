@@ -76,7 +76,7 @@
                 [Math.floor(win.innerWidth * Math.random()), win.innerHeight]
             ][Math.floor(4 * Math.random())];
             self.setPos(pos[0], pos[1]);
-            setTimeout(self.startRandomWalk, 1000 + Math.floor(Math.random() * 500), self);
+            setTimeout(self.startRandomWalk, 2000 + Math.floor(Math.random() * 500), self);
             return this;
         };
 

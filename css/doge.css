@@ -5,11 +5,11 @@ body {
   position: absolute;
   background: url(../image/doge.png);
   background-position: 0 0;
-  -webkit-transition: left 1s linear, top 1s linear;
-  -moz-transition: left 1s linear, top 1s linear;
-  -ms-transition: left 1s linear, top 1s linear;
-  -o-transition: left 1s linear, top 1s linear;
-  transition: left 1s linear, top 1s linear;
+  -webkit-transition: left 2s linear, top 2s linear;
+  -moz-transition: left 2s linear, top 2s linear;
+  -ms-transition: left 2s linear, top 2s linear;
+  -o-transition: left 2s linear, top 2s linear;
+  transition: left 2s linear, top 2s linear;
 }
 .doge-shine-true {
   -webkit-animation-name: autoShine;
