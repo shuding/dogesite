@@ -1,0 +1,107 @@
+body {
+  overflow: hidden;
+}
+.doge{
+  position: absolute;
+  background: url(../image/doge.png);
+  background-position: 0 0;
+  -webkit-transition: left 1s linear, top 1s linear;
+  -moz-transition: left 1s linear, top 1s linear;
+  -ms-transition: left 1s linear, top 1s linear;
+  -o-transition: left 1s linear, top 1s linear;
+  transition: left 1s linear, top 1s linear;
+}
+.doge-shine-true {
+  -webkit-animation-name: autoShine;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.doge-background{
+  background: url(../image/doge-pattern.png);
+  background-position: 0 0;
+}
+.doge-big {
+  width: 250px;
+  height: 250px;
+  background-size: 250px;
+}
+.doge-medium {
+  width: 200px;
+  height: 200px;
+  background-size: 200px;
+}
+.doge-small {
+  width: 150px;
+  height: 150px;
+  background-size: 150px;
+}
+.doge-dir-0 {
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -o-transform: rotateY(0);
+  transform: rotateY(0);
+}
+.doge-dir-1 {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.auto-move {
+  -webkit-animation: autoMove 2s linear infinite;
+  -moz-animation: autoMove 2s linear infinite;
+  -ms-animation: autoMove 2s linear infinite;
+  -o-animation: autoMove 2s linear infinite;
+  animation: autoMove 2s linear infinite;
+}
+@-webkit-keyframes autoMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 200px;
+  }
+}
+@-moz-keyframes autoMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 200px;
+  }
+}
+@-ms-keyframes autoMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 200px;
+  }
+}
+@-o-keyframes autoMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 200px;
+  }
+}
+@keyframes autoMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 200px;
+  }
+}
+@-webkit-keyframes autoShine {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
