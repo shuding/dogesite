@@ -5,7 +5,7 @@
 
 (function(doc, win){
 
-    var DOGE_COUNT = 200;
+    var DOGE_COUNT = 20;
 
     var doge = function () {
         // default size: medium
@@ -60,6 +60,25 @@
         };
 
         /**
+         * Set the duration of doge aniamtion
+         * @method  setTransitionDuration
+         * @param   t (required) seconds
+         * @return  self
+         */
+        this.setTransitionDuration = function (t) {
+            var browserPrefixs = [
+                "-webkit-",
+                "-moz-",
+                "-ms-",
+                "-o-",
+                ""
+            ];
+            for (var i = 0; i < browserPrefixs.length; ++i)
+                this.element.style[browserPrefixs[i] + "transition"] = "top " + t + "ms ease-out, left " + t + "ms ease-out";
+            return this;
+        };
+
+        /**
          * Start random walk
          * @method  startRandomWalk
          * @param   this
@@ -75,8 +94,15 @@
                 [Math.floor(win.innerWidth * Math.random()), -250],
                 [Math.floor(win.innerWidth * Math.random()), win.innerHeight]
             ][Math.floor(4 * Math.random())];
+            var d = Math.sqrt(Math.pow(self.pos[0] - pos[0], 2) + Math.pow(self.pos[1] - pos[1], 2));
+            var t = Math.floor(400 + Math.random() * 4000);
+            self.setTransitionDuration(t);
             self.setPos(pos[0], pos[1]);
-            setTimeout(self.startRandomWalk, 2000 + Math.floor(Math.random() * 500), self);
+            if (d > t * .5)
+                self.element.className += " doge-reverse";
+            else
+                self.element.className = self.element.className.replace("doge-reverse", "");
+            setTimeout(self.startRandomWalk, t, self);
             return this;
         };
 
